@@ -7,11 +7,61 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Where in the world?</title>
    <link rel="stylesheet" href="css/main.css">
+   <script src="https://kit.fontawesome.com/be3eced35c.js" crossorigin="anonymous"></script>
    <script src="js/app.js" defer></script>
 </head>
 
 <body>
-
+   <nav class="navigation">
+      <h1><a href="index" class="navigation__logo">Where in the world?</a></h1>
+      <button class="navigation__theme-btn"><i class="fa-regular fa-moon"></i> Dark Mode</button>
+   </nav>
+   <div class="wrapper">
+      <header class="header">
+         <nav class="header__nav">
+            <input type="search" id="search-input">
+            <select name="filter" id="filter">
+               <option value="Africa">Africa</option>
+               <option value="America">America</option>
+               <option value="Asia">Asia</option>
+               <option value="Europe">Europe</option>
+               <option value="Oceania">Oceania</option>
+            </select>
+         </nav>
+      </header>
+      <main class="main">
+         <section class="country-cards">
+            <div class="card">
+               <img src="" class="card__img" alt="">
+               <h2 class="card__name">Germany</h2>
+               <p class="card__population">81,700,900</p>
+               <p class="card__region">Europe</p>
+               <p class="card__capital">Berlin</p>
+            </div>
+            <div class="card">
+               <img src="" class="card__img" alt="">
+               <h2 class="card__name">Germany</h2>
+               <p class="card__population">81,700,900</p>
+               <p class="card__region">Europe</p>
+               <p class="card__capital">Berlin</p>
+            </div>
+            <div class="card">
+               <img src="" class="card__img" alt="">
+               <h2 class="card__name">Germany</h2>
+               <p class="card__population">81,700,900</p>
+               <p class="card__region">Europe</p>
+               <p class="card__capital">Berlin</p>
+            </div>
+            <div class="card">
+               <img src="" class="card__img" alt="">
+               <h2 class="card__name">Germany</h2>
+               <p class="card__population">81,700,900</p>
+               <p class="card__region">Europe</p>
+               <p class="card__capital">Berlin</p>
+            </div>
+         </section>
+      </main>
+   </div>
 </body>
 
 </html>
