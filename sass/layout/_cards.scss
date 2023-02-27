@@ -1,0 +1,31 @@
+.main {
+	padding: 1.5rem;
+	.country-cards {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 2rem;
+	}
+	.card {
+		background-color: white;
+		box-shadow: 1px 1px 5px rgba(114, 111, 111, 0.411);
+		border-radius: 5px;
+		&__description {
+			padding: 2rem;
+		}
+		&__name {
+			font-size: 2rem;
+			font-weight: 800;
+			margin-bottom: 1.8rem;
+		}
+		&__population,
+		&__region,
+		&__capital {
+			font-size: 1.4rem;
+			margin-bottom: 0.8rem;
+			span {
+				font-weight: 600;
+			}
+		}
+	}
+}
