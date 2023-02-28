@@ -3,3 +3,7 @@ body {
 	background-color: v.$light-background;
 	font-family: v.$font;
 }
+.wrapper {
+	max-width: 1600px;
+	margin: 0 auto;
+}
