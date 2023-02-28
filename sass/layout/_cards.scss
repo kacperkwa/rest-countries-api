@@ -2,8 +2,8 @@
 	padding: 1.5rem;
 	.country-cards {
 		display: grid;
-		grid-template-columns: repeat(auto-fill,minmax(min(95%,350px), 1fr));
-		gap: 2rem;
+		grid-template-columns: repeat(auto-fill, minmax(min(95%, 350px), 1fr));
+		gap: 4rem;
 		justify-items: center;
 	}
 	.card {
@@ -18,6 +18,13 @@
 			font-size: 2rem;
 			font-weight: 800;
 			margin-bottom: 1.8rem;
+		}
+		&__img {
+			width: 100%;
+			height: fit-content;
+			max-height: 180px;
+			border-radius: inherit;
+			box-shadow: 0 4px 10px -8px gray;
 		}
 		&__population,
 		&__region,
