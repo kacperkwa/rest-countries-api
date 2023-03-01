@@ -63,11 +63,12 @@ async function fetchByName() {
 	});
 }
 
-let cards;
-const modalHandler = e => {
-	cards = document.getElementsByClassName('card');
-	console.log(cards);
-};
+async function modalHandler(target) {
+	const responseData = await sendHttpRequest(API_URL);
+	const listOfCountries = responseData;
+	console.log(target.closest('.card__name'));
+	
+}
 
 filter.addEventListener('change', fetchCountries, false);
 searchInput.addEventListener('keyup', e => {
@@ -75,6 +76,9 @@ searchInput.addEventListener('keyup', e => {
 		fetchByName();
 	}
 });
-for (let card of cards) {
-	card.addEventListener('click', modalHandler);
-}
+document.addEventListener('click', e => {
+	const target = e.target.closest('.card');
+	if (target) {
+		modalHandler(target);
+	}
+});
