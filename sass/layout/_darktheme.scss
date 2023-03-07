@@ -1,0 +1,10 @@
+@use '../abstracts/variables' as v;
+
+.dark {
+	background-color: v.$dark-background;
+	color: v.$dark-text;
+}
+.dark-element {
+	background-color: v.$dark-elements;
+   box-shadow: 1px 1px 5px rgba(31, 29, 29, 0.411);
+}

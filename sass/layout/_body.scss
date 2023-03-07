@@ -2,8 +2,10 @@
 body {
 	background-color: v.$light-background;
 	font-family: v.$font;
+	color: v.$light-text;
 	position: relative;
 }
+
 .wrapper {
 	max-width: 1600px;
 	margin: 0 auto;

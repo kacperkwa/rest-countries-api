@@ -11,15 +11,16 @@
 		margin: 0 auto;
 	}
 	&__logo {
-		color: v.$light-text;
+		color: inherit;
 		font-weight: 800;
 		text-decoration: none;
 		font-size: 1.7rem;
 	}
 	&__theme-btn {
+		padding: 1rem;
 		border: none;
 		background: none;
-		padding: 1rem;
+		color: inherit;
 		i {
 			font-size: 1.4rem;
 		}

@@ -4,6 +4,7 @@ const filter = document.getElementById('filter');
 const wrapper = document.querySelector('.wrapper');
 const backBtn = document.getElementsByClassName('back-btn');
 const modalSection = document.querySelector('.modal');
+const themeBtn = document.querySelector('.navigation__theme-btn');
 
 const main = document.querySelector('.main');
 const API_URL = 'data.json';
@@ -115,6 +116,18 @@ const closeModal = () => {
 	modalContainer.remove();
 };
 
+const themeSwitcher = () => {
+	const body = document.querySelector('body');
+	const nav = document.querySelector('.navigation');
+	const cards = document.querySelectorAll('.card');
+	body.classList.toggle('dark');
+	nav.classList.toggle('dark-element');
+	modalSection.classList.toggle('dark');
+	// cards.forEach(card => {
+	// 	card.classList.toggle('dark-element');
+	// });
+};
+
 filter.addEventListener('change', fetchCountries, false);
 searchInput.addEventListener('keyup', e => {
 	if (e.key === 'Enter') {
@@ -133,3 +146,4 @@ document.addEventListener('click', e => {
 		closeModal(target);
 	}
 });
+themeBtn.addEventListener('click', themeSwitcher);
