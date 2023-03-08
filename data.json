@@ -206,7 +206,7 @@
     "area": 2381741,
     "gini": 27.6,
     "timezones": ["UTC+01:00"],
-    "borders": ["TUN", "LBY", "NER", "ESH", "MRT", "MLI", "MAR"],
+    "borders": ["TUN", "LBY", "NER", "ESH", "MRT", "MLI", "AMR"],
     "nativeName": "الجزائر",
     "numericCode": "012",
     "flags": {

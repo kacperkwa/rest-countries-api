@@ -6,6 +6,7 @@ const backBtn = document.getElementsByClassName('back-btn');
 const modalSection = document.querySelector('.modal');
 const themeBtn = document.querySelector('.navigation__theme-btn');
 let isDarkMode = false;
+let darkElement;
 
 const main = document.querySelector('.main');
 const API_URL = 'data.json';
@@ -15,6 +16,13 @@ const sendHttpRequest = API_URL => {
 		return response.json();
 	});
 };
+const checkMode = () => {
+	if (isDarkMode === true) {
+		darkElement = 'dark-element';
+	} else {
+		darkElement = '';
+	}
+};
 
 async function fetchCountries() {
 	const responseData = await sendHttpRequest(API_URL);
@@ -22,15 +30,7 @@ async function fetchCountries() {
 	countryContainer.innerHTML = ``;
 	listOfCountries.forEach(country => {
 		if (country.region === filter.value) {
-			let dark;
-			let darkElement
-			if (isDarkMode === true) {
-				dark = 'dark';
-				darkElement = 'dark-element';
-			} else {
-				dark = '';
-				darkElement = '';
-			}
+			checkMode();
 			countryContainer.innerHTML =
 				countryContainer.innerHTML +
 				`<div class="card ${darkElement}">
@@ -45,7 +45,7 @@ async function fetchCountries() {
 		} else if (filter.value === 'all') {
 			countryContainer.innerHTML =
 				countryContainer.innerHTML +
-				`<div class="card">
+				`<div class="card ${darkElement}">
    <img src="${country.flag}" class="card__img" alt="${country.name} flag">
    <div class="card__description">
       <h2 class="card__name">${country.name}</h2>
@@ -64,9 +64,10 @@ async function fetchByName() {
 	countryContainer.innerHTML = ``;
 	listOfCountries.forEach(country => {
 		if (country.name.toUpperCase() === countryName) {
+			checkMode();
 			countryContainer.innerHTML =
 				countryContainer.innerHTML +
-				`<div class="card">
+				`<div class="card ${darkElement}">
 	<img src="${country.flag}" class="card__img" alt="${country.name} flag">
 	<div class="card__description">
 		<h2 class="card__name">${country.name}</h2>
@@ -127,12 +128,16 @@ const closeModal = () => {
 };
 
 const themeSwitcher = () => {
-	isDarkMode= !isDarkMode;
+	isDarkMode = !isDarkMode;
 	const body = document.querySelector('body');
 	const nav = document.querySelector('.navigation');
 	body.classList.toggle('dark');
 	nav.classList.toggle('dark-element');
 	modalSection.classList.toggle('dark');
+	let cards = document.querySelectorAll('.card');
+	cards.forEach(card => {
+		card.classList.toggle('dark-element');
+	});
 };
 
 filter.addEventListener('change', fetchCountries, false);
