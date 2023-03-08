@@ -5,6 +5,7 @@ const wrapper = document.querySelector('.wrapper');
 const backBtn = document.getElementsByClassName('back-btn');
 const modalSection = document.querySelector('.modal');
 const themeBtn = document.querySelector('.navigation__theme-btn');
+let isDarkMode = false;
 
 const main = document.querySelector('.main');
 const API_URL = 'data.json';
@@ -21,9 +22,18 @@ async function fetchCountries() {
 	countryContainer.innerHTML = ``;
 	listOfCountries.forEach(country => {
 		if (country.region === filter.value) {
+			let dark;
+			let darkElement
+			if (isDarkMode === true) {
+				dark = 'dark';
+				darkElement = 'dark-element';
+			} else {
+				dark = '';
+				darkElement = '';
+			}
 			countryContainer.innerHTML =
 				countryContainer.innerHTML +
-				`<div class="card">
+				`<div class="card ${darkElement}">
 			<img src="${country.flag}" class="card__img" alt="${country.name} flag">
 			<div class="card__description">
          <h2 class="card__name">${country.name}</h2>
@@ -117,15 +127,12 @@ const closeModal = () => {
 };
 
 const themeSwitcher = () => {
+	isDarkMode= !isDarkMode;
 	const body = document.querySelector('body');
 	const nav = document.querySelector('.navigation');
-	const cards = document.querySelectorAll('.card');
 	body.classList.toggle('dark');
 	nav.classList.toggle('dark-element');
 	modalSection.classList.toggle('dark');
-	// cards.forEach(card => {
-	// 	card.classList.toggle('dark-element');
-	// });
 };
 
 filter.addEventListener('change', fetchCountries, false);

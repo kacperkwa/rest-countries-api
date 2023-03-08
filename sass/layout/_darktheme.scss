@@ -5,6 +5,6 @@
 	color: v.$dark-text;
 }
 .dark-element {
-	background-color: v.$dark-elements;
-   box-shadow: 1px 1px 5px rgba(31, 29, 29, 0.411);
+	background-color: v.$dark-elements !important;
+   box-shadow: 1px 1px 5px rgba(31, 29, 29, 0.411) !important;
 }
